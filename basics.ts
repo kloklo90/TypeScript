@@ -1,4 +1,3 @@
-export {}
 console.log("TypeScript 2021 Beginner App");
 
 /***************************************************************************
@@ -26,3 +25,27 @@ const resultPhrase = 'Result is: ';
 
 add(number1, number2, printResult, resultPhrase);
 // console.log(result);
+
+
+/** Taking a look at compiler options in tsconfig.js */
+
+// Exclamation mark to reassure TypeScript that a button 
+// will exist and this will not cause a null error
+// instead of if block check
+const button = document.querySelector('button')!;
+
+// if (button) {
+button.addEventListener('click', () => {
+  console.log('Clicked!');
+});
+// }
+
+const secondButton = document.querySelector(".secondBtn");
+
+function clickHandler(message: string) {
+  console.log('Clicked! ' + message);
+}
+
+if (secondButton) {
+  secondButton.addEventListener('click', clickHandler.bind(null, "You"))
+}
